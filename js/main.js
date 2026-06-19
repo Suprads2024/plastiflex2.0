@@ -276,23 +276,7 @@
     });
   });
 
-  /* ============================================================
-     09 · BOTONES MAGNÉTICOS
-     ============================================================ */
-  if (hasGSAP && finePointer && !prefersReduced) {
-    document.querySelectorAll(".btn").forEach((btn) => {
-      const strength = 0.32;
-      btn.addEventListener("mousemove", (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = e.clientX - r.left - r.width / 2;
-        const y = e.clientY - r.top - r.height / 2;
-        gsap.to(btn, { x: x * strength, y: y * strength, duration: 0.35, ease: "power2.out" });
-      });
-      btn.addEventListener("mouseleave", () => {
-        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" });
-      });
-    });
-  }
+
 
   /* ============================================================
      10 · TILT 3D EN CARDS
@@ -311,34 +295,7 @@
     });
   }
 
-  /* ============================================================
-     11 · CURSOR CUSTOM
-     ============================================================ */
-  if (hasGSAP && finePointer && !prefersReduced) {
-    const dot = document.createElement("div");
-    const ring = document.createElement("div");
-    dot.className = "cursor-dot";
-    ring.className = "cursor-ring";
-    document.body.append(dot, ring);
-    document.documentElement.classList.add("has-cursor");
-
-    const pos = { x: innerWidth / 2, y: innerHeight / 2 };
-    const ringPos = { x: pos.x, y: pos.y };
-
-    window.addEventListener("mousemove", (e) => { pos.x = e.clientX; pos.y = e.clientY; });
-
-    gsap.ticker.add(() => {
-      ringPos.x += (pos.x - ringPos.x) * 0.16;
-      ringPos.y += (pos.y - ringPos.y) * 0.16;
-      gsap.set(dot, { x: pos.x, y: pos.y });
-      gsap.set(ring, { x: ringPos.x, y: ringPos.y });
-    });
-
-    document.querySelectorAll("a, button, .card, .acc__item").forEach((el) => {
-      el.addEventListener("mouseenter", () => ring.classList.add("is-hover"));
-      el.addEventListener("mouseleave", () => ring.classList.remove("is-hover"));
-    });
-  }
+ 
 
   /* ============================================================
      12 · SCROLLSPY

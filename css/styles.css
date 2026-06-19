@@ -74,7 +74,7 @@ html.no-js .loader, html.no-gsap .loader { display: none; }
   transform: scaleX(0); transform-origin: left;
 }
 
-/* ---------- Cursor custom (solo pointer fino) ---------- */
+/* ---------- Cursor custom (solo pointer fino)
 .cursor-dot, .cursor-ring { display: none; }
 @media (pointer: fine) {
   .cursor-dot, .cursor-ring {
@@ -94,7 +94,7 @@ html.no-js .loader, html.no-gsap .loader { display: none; }
     background: rgba(255, 180, 0, .08);
   }
   html.has-cursor, html.has-cursor a, html.has-cursor button { cursor: none; }
-}
+} ---------- */
 
 /* ============================================================
    BOTONES
@@ -111,10 +111,10 @@ html.no-js .loader, html.no-gsap .loader { display: none; }
 .btn::after { /* barrido de luz */
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 65%);
-  transform: translateX(-120%);
+  transform: translateX(-20%);
   transition: transform .55s ease;
 }
-.btn:hover::after { transform: translateX(120%); }
+.btn:hover::after { transform: translateX(20%); }
 .btn--solid { background: var(--azul); color: var(--blanco); }
 .btn--solid:hover { background: var(--azul-hover); box-shadow: 0 10px 24px -10px rgba(39,76,147,.6); }
 .btn--yellow { background: var(--amarillo); color: var(--tinta); }
